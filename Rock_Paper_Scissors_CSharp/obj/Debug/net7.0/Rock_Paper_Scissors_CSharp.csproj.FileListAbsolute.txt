@@ -1,0 +1,5 @@
+/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/obj/Debug/net7.0/Rock_Paper_Scissors_CSharp.csproj.AssemblyReference.cache
+/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/obj/Debug/net7.0/Rock_Paper_Scissors_CSharp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/obj/Debug/net7.0/Rock_Paper_Scissors_CSharp.AssemblyInfoInputs.cache
+/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/obj/Debug/net7.0/Rock_Paper_Scissors_CSharp.AssemblyInfo.cs
+/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/obj/Debug/net7.0/Rock_Paper_Scissors_CSharp.csproj.CoreCompileInputs.cache
