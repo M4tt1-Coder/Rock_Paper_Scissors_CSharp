@@ -5,6 +5,10 @@ namespace Rock_Paper_Scissors_CSharp.lib;
 /// </summary>
 public class Utils
 {
+    public int RandomChoice()
+    {
+        int output = 
+    }
     public void PrepareNewGame(GameModel game)
     {
         game.UserBet = null;

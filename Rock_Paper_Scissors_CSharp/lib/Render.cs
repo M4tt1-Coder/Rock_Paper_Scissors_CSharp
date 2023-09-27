@@ -27,8 +27,9 @@ public class Render
             return;
         }
         //check how to render the field -> what did the user select or computer?
-
         //-> after that call render methods for each symbol
+        GameRenderer gameRenderer = new GameRenderer();
+        gameRenderer.DisplayGame(game.UserBet, game.ComputerBet);
     }
 }
 
@@ -42,12 +43,12 @@ class GameRenderer
     /// <summary>
     /// Setting the height of the gaming field
     /// </summary>
-    private const int HEIGHT = 50;
+    private const int Height = 50;
     
     /// <summary>
     /// Setting the width of the gaming field 
     /// </summary>
-    private const int WIDTH = 120;
+    private const int Width = 120;
     
     /// <summary>
     /// renders all special cases of the game
@@ -55,16 +56,16 @@ class GameRenderer
     /// <param name="userbet">what the player selected</param>
     /// <param name="computerbet">the random generated program choice</param>
     /// <returns></returns>
-    public void DisplayGame(int userbet, int computerbet)
+    public void DisplayGame(int? userbet, int? computerbet)
     {
         //Specific symbol layouts
         List<LayoutModel> layouts = FileNode.ConvertLayouts();
 
-        List<int[]> RockLayout = layouts[0].Layout;
+        List<int[]> rockLayout = layouts[0].Layout;
 
-        List<int[]> PaperLayout = layouts[1].Layout;
+        List<int[]> paperLayout = layouts[1].Layout;
 
-        List<int[]> ScissorLayout = layouts[2].Layout;
+        List<int[]> scissorLayout = layouts[2].Layout;
         
         //will look from the sight of the player
         //rock cases
@@ -73,17 +74,19 @@ class GameRenderer
             //user has rock : computer rock
             if (GameOptions.Rock.Equals(computerbet))
             {
-                
+                FieldRender(rockLayout, rockLayout);
             }
 
             //user rock : computer paper
             if (GameOptions.Paper.Equals(computerbet))
             {
+                FieldRender(rockLayout, paperLayout);
             }
 
             //user rock : computer scissors
             if (GameOptions.Scissor.Equals(computerbet))
             {
+                FieldRender(rockLayout, scissorLayout);
             }
         }
 
@@ -93,16 +96,19 @@ class GameRenderer
             //user paper : computer rock
             if (GameOptions.Rock.Equals(computerbet))
             {
+                FieldRender(paperLayout, rockLayout);
             }
 
             //user paper : computer paper 
             if (GameOptions.Paper.Equals(computerbet))
             {
+                FieldRender(paperLayout, paperLayout);
             }
 
             //user paper : computer scissors
             if (GameOptions.Scissor.Equals(computerbet))
             {
+                FieldRender(paperLayout, scissorLayout);
             }
         }
 
@@ -112,29 +118,32 @@ class GameRenderer
             //user scissors : computer rock
             if (GameOptions.Rock.Equals(computerbet))
             {
+                FieldRender(scissorLayout, rockLayout);
             }
             
             //user scissors : computer paper
             if (GameOptions.Paper.Equals(computerbet))
             {
+                FieldRender(scissorLayout, paperLayout);
             }
 
             //user scissors : computer scissors
             if (GameOptions.Scissor.Equals(computerbet))
             {
+                FieldRender(scissorLayout, scissorLayout);
             }
         }
     }
 
-    public void FieldRender(List<int[]> firstSymbol, List<int[]> secondSymbol)
+    private void FieldRender(List<int[]> firstSymbol, List<int[]> secondSymbol)
     {
         //constant versus setter coordinates 
         var versusCoordinates = new List<int[]> { }; 
         //▄symbol
         //a 2 dimensional field
-        for (int y = 0; y < HEIGHT; y++)
+        for (int y = 0; y < Height; y++)
         {
-            for (int x = 0; x < WIDTH; x++)
+            for (int x = 0; x < Width; x++)
             {
                 //1.) render user symbol on the left
                 foreach (var coordinate in firstSymbol)
