@@ -3,3 +3,13 @@
 /Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/obj/Debug/net7.0/Rock_Paper_Scissors_CSharp.AssemblyInfoInputs.cache
 /Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/obj/Debug/net7.0/Rock_Paper_Scissors_CSharp.AssemblyInfo.cs
 /Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/obj/Debug/net7.0/Rock_Paper_Scissors_CSharp.csproj.CoreCompileInputs.cache
+/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/bin/Debug/net7.0/Rock_Paper_Scissors_CSharp
+/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/bin/Debug/net7.0/Rock_Paper_Scissors_CSharp.deps.json
+/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/bin/Debug/net7.0/Rock_Paper_Scissors_CSharp.runtimeconfig.json
+/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/bin/Debug/net7.0/Rock_Paper_Scissors_CSharp.dll
+/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/bin/Debug/net7.0/Rock_Paper_Scissors_CSharp.pdb
+/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/obj/Debug/net7.0/Rock_Paper_Scissors_CSharp.dll
+/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/obj/Debug/net7.0/refint/Rock_Paper_Scissors_CSharp.dll
+/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/obj/Debug/net7.0/Rock_Paper_Scissors_CSharp.pdb
+/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/obj/Debug/net7.0/Rock_Paper_Scissors_CSharp.genruntimeconfig.cache
+/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/obj/Debug/net7.0/ref/Rock_Paper_Scissors_CSharp.dll

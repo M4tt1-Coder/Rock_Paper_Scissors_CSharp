@@ -10,7 +10,7 @@ namespace Rock_Paper_Scissors_CSharp.lib;
 /// It covers all special cases of playing and shows all depending pixel arts.s
 /// </summary>
 public class Render
-{
+{ 
     //three methods for rock, paper and scissors each
     //one public method for start
 
