@@ -23,12 +23,22 @@ if (gameMode == 1)
 //user vs computer
 else if (gameMode == 2)
 {
-    
+    // get game outputs 
+    int[] userChoices = util.UserVsComputerOptions();
+
+    game.UserOneBet = userChoices[0];
+    game.UserTwoBet = userChoices[1];
 }
 
 //check game and display result 
 Checker.IsThereAWinner(game);
-//TODO - look how to access files that are not in the bin file during runtime -> filenode
 Render.RenderStart(game);
+
+//show final winner 
+util.WriteWinnerInfo(game);
+
+//TODO - rework the layout 
+//TODO - add score template 
+//TODO - issue in checker with paper game option selected 
 
 //ask for new game

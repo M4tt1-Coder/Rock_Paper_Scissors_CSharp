@@ -8,6 +8,93 @@ namespace Rock_Paper_Scissors_CSharp.lib;
 public class Utils
 {
     /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="game"></param>
+    public void WriteWinnerInfo(GameModel game)
+    {
+        Console.WriteLine("__________");
+        //check who is the winner OR if there is a draw
+        if (game.Winner == 0)
+        {
+            Console.WriteLine("Player 1 is the winner!");
+        } 
+        else if (game.Winner == 1)
+        {
+            Console.WriteLine("Player 2 won!");
+        }
+        else if (game.Winner == 2)
+        {
+            Console.WriteLine("The game ended in a draw!");
+        }
+
+        Console.WriteLine("__________");
+
+        //give extra information about the case when the player chose User VS computer mode
+        Console.WriteLine("When you played against the computer then player 2 is the COMPUTER!");
+    }
+    
+    /// <summary>
+    /// Has a fixed number of possible tries to enter
+    /// user input in valid format.
+    /// -> shuts app down after too many fails
+    ///
+    /// ask user for 1 input & generates a random computer choices
+    /// </summary>
+    /// <returns>integer array as made gameoptions</returns>
+    public int[] UserVsComputerOptions()
+    {
+        int tries = 3;
+        
+        tryUserVsPcOptionsAgain:
+
+        try
+        {
+            //shut down to maintain user experience 
+            if (tries == 0)
+            {
+                Console.WriteLine("After too many attemps to enter the game stops!");
+                Thread.Sleep(1000);
+                Environment.Exit(0);
+            }
+            
+            //get user input 
+            Console.WriteLine("There are these options for you to select: [1] = Rock; [2] = Paper; [3] = Scissors");
+            Console.WriteLine("Please enter your answer!");
+            Console.Write("=> : ");
+            int userOption = Convert.ToInt16(Console.ReadLine());
+            
+            //input validation
+            if (userOption < 1 || userOption > 3)
+            {
+                Console.WriteLine("You entered a invalid number or input");
+                Console.Clear();
+                tries -= 1;
+                goto tryUserVsPcOptionsAgain;
+            }
+            
+            //adjust to index values of gameoptions
+            userOption -= 1;
+            
+            //set computers answer
+            Random rnd = new Random();
+            int computerOption = rnd.Next(0, 3);
+            
+            //create output variable
+            int[] output = new int[] { userOption, computerOption};
+
+            return output;
+        }
+        catch
+        {
+            Console.WriteLine("The application automatic shuts down after to many failed tries!");
+            Console.Clear();
+            tries -= 1;
+            goto tryUserVsPcOptionsAgain;
+        }
+    }
+    
+    /// <summary>
     /// If the player wants to play:
     /// -> User VS User then it gets both players choices
     /// stores them in a integer array -> (index) [0] = user 1 choice || [1] = user 2 choice  
@@ -48,6 +135,7 @@ public class Utils
             {
                 Console.WriteLine("Please enter a choice index that is valid!");
                 Console.Clear();
+                tries -= 1;
                 goto tryUserVsUserOptionsAgain;
             }
             
