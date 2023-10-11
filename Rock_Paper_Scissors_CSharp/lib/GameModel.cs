@@ -9,12 +9,12 @@ public class GameModel
     /// <summary>
     /// Represents the selection of the player
     /// </summary>
-    public int? UserBet { get; set; }
+    public int? UserOneBet { get; set; }
 
     /// <summary>
     /// the program will store its random selection in here
     /// </summary>
-    public int? ComputerBet { get; set; }
+    public int? UserTwoBet { get; set; }
 
     /// <summary>
     /// User = 0

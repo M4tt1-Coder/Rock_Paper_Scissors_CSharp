@@ -1,3 +1,5 @@
+using System.Net.Mime;
+
 namespace Rock_Paper_Scissors_CSharp.lib;
 
 /// <summary>
@@ -6,12 +8,64 @@ namespace Rock_Paper_Scissors_CSharp.lib;
 public class Utils
 {
     /// <summary>
-    /// 
+    /// If the player wants to play:
+    /// -> User VS User then it gets both players choices
+    /// stores them in a integer array -> (index) [0] = user 1 choice || [1] = user 2 choice  
     /// </summary>
-    /// <returns></returns>
-    public int GetGameOption()
+    /// <returns>integer array with user game option choices</returns>
+    public int[] UserVsUserGameOptions()
     {
+        int tries = 3;
         
+        
+        tryUserVsUserOptionsAgain:
+        try
+        {
+            if (tries == 0)
+            {
+                Console.WriteLine("You have failed too ofter please restart!");
+                Thread.Sleep(1000);
+                Environment.Exit(0);
+            }
+            
+            Console.WriteLine("There are 3 options to choose: Rock = [1]; Paper = [2]; Scissors = [3]");
+            //get user 1 input
+            Console.WriteLine("Player 1 your choice please!");
+            Console.Write("=> : ");
+            int decisionUser1 = Convert.ToInt16(Console.ReadLine());
+        
+            //so that player 2 doesn't see player 1 his choice
+            Console.Clear();
+        
+            Console.WriteLine("There are 3 options to choose: Rock = [1]; Paper = [2]; Scissors = [3]");
+            //get user 2 input 
+            Console.WriteLine("Player 2 your choice please!");
+            Console.Write("=> : ");
+            int decisionUser2 = Convert.ToInt16(Console.ReadLine());
+
+            //check if inputs where valid
+            if (decisionUser1 > 3 || decisionUser1 < 1 || decisionUser2 > 3 || decisionUser2 < 1)
+            {
+                Console.WriteLine("Please enter a choice index that is valid!");
+                Console.Clear();
+                goto tryUserVsUserOptionsAgain;
+            }
+            
+            //to match with the index of the game options
+            decisionUser1 -= 1;
+            decisionUser2 -= 1;
+            
+            int[] output = new int[]{ decisionUser1, decisionUser2};
+
+            return output;
+        }
+        catch
+        {
+            Console.WriteLine("Please give valid answers!");
+            Console.Clear();
+            tries -= 1;
+            goto tryUserVsUserOptionsAgain;
+        }
     }
     
     /// <summary>
@@ -71,8 +125,8 @@ public class Utils
     /// <param name="game">represents the game object</param>
     public void PrepareNewGame(GameModel game)
     {
-        game.UserBet = null;
-        game.ComputerBet = null;
+        game.UserOneBet = null;
+        game.UserTwoBet = null;
         game.Winner = null;
     }
 }

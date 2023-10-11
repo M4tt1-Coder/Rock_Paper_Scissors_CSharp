@@ -3,7 +3,7 @@ namespace Rock_Paper_Scissors_CSharp.lib;
 /// <summary>
 /// Looks if all game rules are valid and if there is a winner
 /// </summary>
-public class Checker
+public static class Checker
 {
     //set a winner when there is one
     //update score after every round
@@ -14,7 +14,7 @@ public class Checker
     /// called after every single round
     /// </summary>
     /// <param name="game">current game instance</param>
-    public void IsThereAWinner(GameModel game)
+    public static void IsThereAWinner(GameModel game)
     {
         //go through all cases to win
         SetWinner(game);
@@ -28,7 +28,7 @@ public class Checker
     /// increase the score of the winner with 1
     /// </summary>
     /// <param name="game">game instance of the current round</param>
-    private void UpdateScore(GameModel game)
+    private static void UpdateScore(GameModel game)
     {
         if (game.Winner != 2)
         {
@@ -48,7 +48,7 @@ public class Checker
     /// Updates the round of the game
     /// </summary>
     /// <param name="game">current instance of the game</param>
-    private void UpdateRound(GameModel game)
+    private static void UpdateRound(GameModel game)
     {
         game.Round += 1;
     }
@@ -58,52 +58,52 @@ public class Checker
     /// but all possibilities are covered 
     /// </summary>
     /// <param name="game">game instance</param>
-    private void SetWinner(GameModel game)
+    private static void SetWinner(GameModel game)
     {
         //check with user bet = rock
-        if (game.UserBet == 0 && game.ComputerBet == 0)
+        if (game.UserOneBet == 0 && game.UserTwoBet == 0)
         {
             game.Winner = 2;
         }
 
-        if (game.UserBet == 0 && game.ComputerBet == 1)
+        if (game.UserOneBet == 0 && game.UserTwoBet == 1)
         {
             game.Winner = 1;
         }
 
-        if (game.UserBet == 0 && game.ComputerBet == 2)
+        if (game.UserOneBet == 0 && game.UserTwoBet == 2)
         {
             game.Winner = 0;
         }
         
         //check with paper 
-        if (game.UserBet == 1 && game.ComputerBet == 0)
+        if (game.UserOneBet == 1 && game.UserTwoBet == 0)
         {
             game.Winner = 0;
         }
 
-        if (game.UserBet == 1 && game.ComputerBet == 1)
+        if (game.UserOneBet == 1 && game.UserTwoBet == 1)
         {
             game.Winner = 2;
         }
 
-        if (game.UserBet == 1 && game.ComputerBet == 2)
+        if (game.UserOneBet == 1 && game.UserTwoBet == 2)
         {
             game.Winner = 1;
         }
         
         //check with scissors
-        if (game.UserBet == 2 && game.ComputerBet == 0)
+        if (game.UserOneBet == 2 && game.UserTwoBet == 0)
         {
             game.Winner = 1;
         }
 
-        if (game.UserBet == 2 && game.ComputerBet == 1)
+        if (game.UserOneBet == 2 && game.UserTwoBet == 1)
         {
             game.Winner = 0;
         }
 
-        if (game.UserBet == 2 && game.ComputerBet == 2)
+        if (game.UserOneBet == 2 && game.UserTwoBet == 2)
         {
             game.Winner = 2;
         }

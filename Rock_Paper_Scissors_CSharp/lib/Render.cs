@@ -9,7 +9,7 @@ namespace Rock_Paper_Scissors_CSharp.lib;
 /// That's the node where the field in general is rendered.
 /// It covers all special cases of playing and shows all depending pixel arts.s
 /// </summary>
-public class Render
+public static class Render
 { 
     //three methods for rock, paper and scissors each
     //one public method for start
@@ -19,17 +19,17 @@ public class Render
     /// Calls the render methods for each symbol depending on the game conditions 
     /// </summary>
     /// <param name="game">the current instance of the game</param>
-    public void RenderStart(GameModel game)
+    public static void RenderStart(GameModel game)
     {
         //make sure that player and computer have made their choice
-        if (game.UserBet == null && game.ComputerBet == null)
+        if (game.UserOneBet == null && game.UserTwoBet == null)
         {
             return;
         }
         //check how to render the field -> what did the user select or computer?
         //-> after that call render methods for each symbol
         GameRenderer gameRenderer = new GameRenderer();
-        gameRenderer.DisplayGame(game.UserBet, game.ComputerBet);
+        gameRenderer.DisplayGame(game.UserOneBet, game.UserTwoBet);
     }
 }
 
@@ -43,7 +43,7 @@ class GameRenderer
     /// <summary>
     /// Setting the height of the gaming field
     /// </summary>
-    private const int Height = 50;
+    private const int Height = 10;
     
     /// <summary>
     /// Setting the width of the gaming field 
@@ -53,82 +53,84 @@ class GameRenderer
     /// <summary>
     /// renders all special cases of the game
     /// </summary>
-    /// <param name="userbet">what the player selected</param>
-    /// <param name="computerbet">the random generated program choice</param>
+    /// <param name="userOneChoice">what the player selected</param>
+    /// <param name="userTwoChoice">the random generated program choice</param>
     /// <returns></returns>
-    public void DisplayGame(int? userbet, int? computerbet)
+    public void DisplayGame(int? userOneChoice, int? userTwoChoice)
     {
         //Specific symbol layouts
         List<LayoutModel> layouts = FileNode.ConvertLayouts();
 
         List<int[]> rockLayout = layouts[0].Layout;
-
-        List<int[]> paperLayout = layouts[1].Layout;
-
-        List<int[]> scissorLayout = layouts[2].Layout;
+        
+        // List<int[]> paperLayout = layouts[1].Layout;
+        List<int[]> paperLayout = new List<int[]>();
+        
+        //List<int[]> scissorLayout = layouts[2].Layout;
+        List<int[]> scissorLayout = new List<int[]>();
         
         //will look from the sight of the player
         //rock cases
-        if (GameOptions.Rock.Equals(userbet))
+        if (userOneChoice == (int)GameOptions.Rock)
         {
             //user has rock : computer rock
-            if (GameOptions.Rock.Equals(computerbet))
+            if (userTwoChoice == (int)GameOptions.Rock)
             {
                 FieldRender(rockLayout, rockLayout);
             }
 
             //user rock : computer paper
-            if (GameOptions.Paper.Equals(computerbet))
+            if (userTwoChoice == (int)GameOptions.Paper)
             {
                 FieldRender(rockLayout, paperLayout);
             }
 
             //user rock : computer scissors
-            if (GameOptions.Scissor.Equals(computerbet))
+            if (userTwoChoice == (int)GameOptions.Scissor)
             {
                 FieldRender(rockLayout, scissorLayout);
             }
         }
 
         //paper cases
-        if (GameOptions.Paper.Equals(userbet))
+        if (userOneChoice == (int)GameOptions.Paper)
         {
             //user paper : computer rock
-            if (GameOptions.Rock.Equals(computerbet))
+            if (userTwoChoice == (int)GameOptions.Rock)
             {
                 FieldRender(paperLayout, rockLayout);
             }
 
             //user paper : computer paper 
-            if (GameOptions.Paper.Equals(computerbet))
+            if (userTwoChoice == (int)GameOptions.Paper)
             {
                 FieldRender(paperLayout, paperLayout);
             }
 
             //user paper : computer scissors
-            if (GameOptions.Scissor.Equals(computerbet))
+            if (userTwoChoice == (int)GameOptions.Scissor)
             {
                 FieldRender(paperLayout, scissorLayout);
             }
         }
 
         //scissor cases
-        if (GameOptions.Scissor.Equals(userbet))
+        if (userOneChoice == (int)GameOptions.Scissor)
         {
             //user scissors : computer rock
-            if (GameOptions.Rock.Equals(computerbet))
+            if (userTwoChoice == (int)GameOptions.Rock)
             {
                 FieldRender(scissorLayout, rockLayout);
             }
             
             //user scissors : computer paper
-            if (GameOptions.Paper.Equals(computerbet))
+            if (userTwoChoice == (int)GameOptions.Paper)
             {
                 FieldRender(scissorLayout, paperLayout);
             }
 
             //user scissors : computer scissors
-            if (GameOptions.Scissor.Equals(computerbet))
+            if (userTwoChoice == (int)GameOptions.Scissor)
             {
                 FieldRender(scissorLayout, scissorLayout);
             }
@@ -145,11 +147,15 @@ class GameRenderer
         {
             for (int x = 0; x < Width; x++)
             {
+                //in case that some symbol was found at the current coordinates
+                bool noHit = true;
+                
                 //1.) render user symbol on the left
                 foreach (var coordinate in firstSymbol)
                 {
                     if (x == coordinate[0] && y == coordinate[1])
                     {
+                        noHit = false;
                         Console.Write("\u2584");
                     }
                 }
@@ -158,19 +164,26 @@ class GameRenderer
                 {
                     if (x == coordinate[0] && y == coordinate[1])
                     {
+                        noHit = false;
                         Console.Write("\u2584");
                     }
                 }
                 //3.) computer symbol on the right
                 foreach (var coordinate in secondSymbol)
                 {
-                    if (x == coordinate[0] && y == coordinate[1])
+                    if (x == coordinate[0] + 70 && y == coordinate[1] + 70)
                     {
+                        noHit = false;
                         Console.Write("\u2584");
                     }
                 }
-            }
 
+                if (noHit)
+                {
+                    Console.Write(" ");
+                }
+            }
+            
             Console.WriteLine();
         }
     }

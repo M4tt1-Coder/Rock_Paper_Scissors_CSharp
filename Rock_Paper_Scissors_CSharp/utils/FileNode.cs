@@ -1,3 +1,4 @@
+using System.Reflection;
 using Rock_Paper_Scissors_CSharp.lib;
 
 namespace Rock_Paper_Scissors_CSharp.utils;
@@ -13,9 +14,9 @@ public static class FileNode
     /// can get the layouts 
     /// </summary>
     /// <returns>Path string</returns>
-    private static string Path()
+    private static string path()
     {
-        return "./lib/SymbolLayouts.txt";
+        return "SymbolLayouts.txt";
     }
 
     /// <summary>
@@ -25,9 +26,9 @@ public static class FileNode
     /// <returns>List of all lines in a file</returns>
     private static List<string> LoadContent()
     {
-        if (!File.Exists(Path()))
+        if (!File.Exists(path()))
         {
-            File.Create(Path());
+            File.Create(path());
         }
         
         //counter of how many attemps the program can make to read from the textfile
@@ -37,7 +38,7 @@ public static class FileNode
         {
             try
             {
-                return File.ReadAllLines(Path()).ToList();
+                return File.ReadAllLines(path()).ToList();
             }
             catch(IOException e)
             {
@@ -58,7 +59,7 @@ public static class FileNode
     {
         //text file lines
         List<string> lines = LoadContent();
-
+        
         //layout list to return
         List<LayoutModel> layouts = new List<LayoutModel>();
 
@@ -84,11 +85,8 @@ public static class FileNode
                 int y = Convert.ToUInt16(coordinates[1]);
 
                 //local instance off a coordinate package to add to the local layout instance
-                int[] package = new int[]{};
-
                 //add coordinates to package
-                package.Append(x);
-                package.Append(y);
+                int[] package = new int[]{x,y};
                 
                 //add packages to layout model
                 layout.Layout.Add(package);

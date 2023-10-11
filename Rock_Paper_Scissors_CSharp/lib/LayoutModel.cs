@@ -10,5 +10,8 @@ public class LayoutModel
     /// </summary>
     public List<int[]> Layout { get; set; }
 
-    public LayoutModel() {}
+    public LayoutModel()
+    {
+        Layout = new List<int[]>();
+    }
 }
