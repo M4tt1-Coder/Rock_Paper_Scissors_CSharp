@@ -3,8 +3,13 @@
 //instance of the game
 GameModel game = new GameModel();
 
+//a goto statement to restart the game
+
 //set the class for useful methods and structuring
 Utils util = new Utils();
+
+//show current score and round(when player played multiple games)
+util.ShowScoreAndRound(game);
 
 //check wanted gaming mode (user vs user OR user vs computer)
 int gameMode = util.GetGameMode();
@@ -38,7 +43,6 @@ Render.RenderStart(game);
 util.WriteWinnerInfo(game);
 
 //TODO - rework the layout 
-//TODO - add score template 
-//TODO - issue in checker with paper game option selected 
+//-> creat rock, paper, scissors, vs layouts
 
 //ask for new game

@@ -8,9 +8,30 @@ namespace Rock_Paper_Scissors_CSharp.lib;
 public class Utils
 {
     /// <summary>
-    /// 
+    /// Should show the user the score of the game and in which round
+    /// the player is.
     /// </summary>
-    /// <param name="game"></param>
+    /// <param name="game">instance of current game</param>
+    public void ShowScoreAndRound(GameModel game)
+    {
+        Console.WriteLine("__________");
+        
+        //show the information
+        Console.Write($"(Player 1) {game.Score[0]}:{game.Score[1]} (Player 2); ");
+        Console.WriteLine($"Round: {game.Round}");
+        
+        Console.WriteLine("__________");
+        
+        Thread.Sleep(2000);
+        
+        Console.Clear();
+    }
+    
+    /// <summary>   
+    /// Looks based on the winner which notification to show.
+    /// winner is a represented by an index
+    /// </summary>
+    /// <param name="game">represents the current game objects</param>
     public void WriteWinnerInfo(GameModel game)
     {
         Console.WriteLine("__________");

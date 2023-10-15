@@ -140,7 +140,14 @@ class GameRenderer
     private void FieldRender(List<int[]> firstSymbol, List<int[]> secondSymbol)
     {
         //constant versus setter coordinates 
-        var versusCoordinates = new List<int[]> { }; 
+        var versusCoordinates = new List<int[]>
+        {
+            new int[]{1,1},new int[]{8,1},new int[]{13,1},new int[]{14,1},new int[]{15,1},new int[]{16,1},new int[]{17,1},new int[]{18,1},
+            new int[]{2,2},new int[]{7,2},new int[]{12,2},new int[]{2,3},new int[]{7,3},new int[]{11,3},new int[]{2,4},new int[]{7,4},new int[]{11,4},
+            new int[]{12,4},new int[]{13,4},new int[]{14,4},new int[]{3,5},new int[]{6,5},new int[]{15,5},new int[]{16,5},new int[]{17,5},new int[]{18,5},
+            new int[]{3,6},new int[]{6,6},new int[]{18,6},new int[]{3,7},new int[]{6,7},new int[]{17,7},new int[]{4,8},new int[]{5,8},new int[]{11,8},
+            new int[]{12,8},new int[]{13,8},new int[]{14,8},new int[]{15,8},new int[]{16,8}
+        }; 
         //▄symbol
         //a 2 dimensional field
         for (int y = 0; y < Height; y++)
@@ -162,7 +169,7 @@ class GameRenderer
                 //2.) vs in the middle
                 foreach (var coordinate in versusCoordinates)
                 {
-                    if (x == coordinate[0] && y == coordinate[1])
+                    if (x == coordinate[0] + 50 && y == coordinate[1])
                     {
                         noHit = false;
                         Console.Write("\u2584");
@@ -171,7 +178,7 @@ class GameRenderer
                 //3.) computer symbol on the right
                 foreach (var coordinate in secondSymbol)
                 {
-                    if (x == coordinate[0] + 70 && y == coordinate[1] + 70)
+                    if (x == coordinate[0] + 70 && y == coordinate[1])
                     {
                         noHit = false;
                         Console.Write("\u2584");

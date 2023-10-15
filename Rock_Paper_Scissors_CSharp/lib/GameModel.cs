@@ -34,6 +34,10 @@ public class GameModel
     /// Counts how many times the user wanted to play again 
     /// </summary>
     public int Round { get; set; }
-    
-    public GameModel() {}
+
+    public GameModel()
+    {
+        Round = 1;
+        Score = new int[] { 0, 0 };
+    }
 }
