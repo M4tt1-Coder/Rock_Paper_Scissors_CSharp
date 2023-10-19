@@ -8,6 +8,48 @@ namespace Rock_Paper_Scissors_CSharp.lib;
 public class Utils
 {
     /// <summary>
+    /// As in other functions the user only can enter three wrong inputs then the app
+    /// shuts down for security and runtime reasons.
+    /// Asks for the user for his decision and converts to a index:
+    ///     -> Yes = 0
+    ///     -> No = 1
+    /// </summary>
+    /// <param name="game">represents the current game instance</param>
+    /// <returns>index of the user choice to play again or not</returns>
+    public int StartNewGame(GameModel game)
+    {
+        int tries = 3;
+        
+        retryStartNewGame:
+        
+        //ask for users decision 
+        Console.Clear();
+        Console.WriteLine("Do you want to play again? -> ['Yes'] OR ['No']");
+        Console.Write("=> : ");
+        string answer = Console.ReadLine()!;
+        if (answer != "Yes" && answer != "No")
+        {
+            if (tries == 0)
+            {
+                Console.WriteLine("You failed to many times! Please restart the app!");
+                Environment.Exit(0);
+            }
+            
+            Console.WriteLine("Try to enter a valid input!");
+            tries -= 1;
+            goto retryStartNewGame;
+        }
+        //when yes: reset, return 0 
+        if (answer == "Yes")
+        {
+            PrepareNewGame(game);
+            return 0;
+        }
+        //when no: dont reset return 1
+        return 1;
+    }
+    
+    /// <summary>
     /// Should show the user the score of the game and in which round
     /// the player is.
     /// </summary>
@@ -22,7 +64,7 @@ public class Utils
         
         Console.WriteLine("__________");
         
-        Thread.Sleep(2000);
+        Thread.Sleep(3000);
         
         Console.Clear();
     }
@@ -232,7 +274,7 @@ public class Utils
     ///     -> resets all game options choices and winner property 
     /// </summary>
     /// <param name="game">represents the game object</param>
-    public void PrepareNewGame(GameModel game)
+    private void PrepareNewGame(GameModel game)
     {
         game.UserOneBet = null;
         game.UserTwoBet = null;

@@ -63,8 +63,7 @@ class GameRenderer
 
         List<int[]> rockLayout = layouts[0].Layout;
         
-        // List<int[]> paperLayout = layouts[1].Layout;
-        List<int[]> paperLayout = new List<int[]>();
+        List<int[]> paperLayout = layouts[1].Layout;
         
         //List<int[]> scissorLayout = layouts[2].Layout;
         List<int[]> scissorLayout = new List<int[]>();
