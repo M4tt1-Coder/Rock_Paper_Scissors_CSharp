@@ -65,8 +65,9 @@ class GameRenderer
         
         List<int[]> paperLayout = layouts[1].Layout;
         
-        //List<int[]> scissorLayout = layouts[2].Layout;
-        List<int[]> scissorLayout = new List<int[]>();
+        List<int[]> scissorLayout = layouts[2].Layout;
+
+        List<int[]> versusLayout = layouts[3].Layout;
         
         //will look from the sight of the player
         //rock cases
@@ -75,19 +76,19 @@ class GameRenderer
             //user has rock : computer rock
             if (userTwoChoice == (int)GameOptions.Rock)
             {
-                FieldRender(rockLayout, rockLayout);
+                FieldRender(rockLayout, rockLayout, versusLayout);
             }
 
             //user rock : computer paper
             if (userTwoChoice == (int)GameOptions.Paper)
             {
-                FieldRender(rockLayout, paperLayout);
+                FieldRender(rockLayout, paperLayout, versusLayout);
             }
 
             //user rock : computer scissors
             if (userTwoChoice == (int)GameOptions.Scissor)
             {
-                FieldRender(rockLayout, scissorLayout);
+                FieldRender(rockLayout, scissorLayout, versusLayout);
             }
         }
 
@@ -97,19 +98,19 @@ class GameRenderer
             //user paper : computer rock
             if (userTwoChoice == (int)GameOptions.Rock)
             {
-                FieldRender(paperLayout, rockLayout);
+                FieldRender(paperLayout, rockLayout, versusLayout);
             }
 
             //user paper : computer paper 
             if (userTwoChoice == (int)GameOptions.Paper)
             {
-                FieldRender(paperLayout, paperLayout);
+                FieldRender(paperLayout, paperLayout, versusLayout);
             }
 
             //user paper : computer scissors
             if (userTwoChoice == (int)GameOptions.Scissor)
             {
-                FieldRender(paperLayout, scissorLayout);
+                FieldRender(paperLayout, scissorLayout, versusLayout);
             }
         }
 
@@ -119,34 +120,34 @@ class GameRenderer
             //user scissors : computer rock
             if (userTwoChoice == (int)GameOptions.Rock)
             {
-                FieldRender(scissorLayout, rockLayout);
+                FieldRender(scissorLayout, rockLayout, versusLayout);
             }
             
             //user scissors : computer paper
             if (userTwoChoice == (int)GameOptions.Paper)
             {
-                FieldRender(scissorLayout, paperLayout);
+                FieldRender(scissorLayout, paperLayout, versusLayout);
             }
 
             //user scissors : computer scissors
             if (userTwoChoice == (int)GameOptions.Scissor)
             {
-                FieldRender(scissorLayout, scissorLayout);
+                FieldRender(scissorLayout, scissorLayout, versusLayout);
             }
         }
     }
 
-    private void FieldRender(List<int[]> firstSymbol, List<int[]> secondSymbol)
+    private void FieldRender(List<int[]> firstSymbol, List<int[]> secondSymbol, List<int[]> versusCoordinates)
     {
         //constant versus setter coordinates 
-        var versusCoordinates = new List<int[]>
-        {
-            new int[]{1,1},new int[]{8,1},new int[]{13,1},new int[]{14,1},new int[]{15,1},new int[]{16,1},new int[]{17,1},new int[]{18,1},
-            new int[]{2,2},new int[]{7,2},new int[]{12,2},new int[]{2,3},new int[]{7,3},new int[]{11,3},new int[]{2,4},new int[]{7,4},new int[]{11,4},
-            new int[]{12,4},new int[]{13,4},new int[]{14,4},new int[]{3,5},new int[]{6,5},new int[]{15,5},new int[]{16,5},new int[]{17,5},new int[]{18,5},
-            new int[]{3,6},new int[]{6,6},new int[]{18,6},new int[]{3,7},new int[]{6,7},new int[]{17,7},new int[]{4,8},new int[]{5,8},new int[]{11,8},
-            new int[]{12,8},new int[]{13,8},new int[]{14,8},new int[]{15,8},new int[]{16,8}
-        }; 
+        // var versusCoordinates = new List<int[]>
+        // {
+        //     new int[]{1,1},new int[]{8,1},new int[]{13,1},new int[]{14,1},new int[]{15,1},new int[]{16,1},new int[]{17,1},new int[]{18,1},
+        //     new int[]{2,2},new int[]{7,2},new int[]{12,2},new int[]{2,3},new int[]{7,3},new int[]{11,3},new int[]{2,4},new int[]{7,4},new int[]{11,4},
+        //     new int[]{12,4},new int[]{13,4},new int[]{14,4},new int[]{3,5},new int[]{6,5},new int[]{15,5},new int[]{16,5},new int[]{17,5},new int[]{18,5},
+        //     new int[]{3,6},new int[]{6,6},new int[]{18,6},new int[]{3,7},new int[]{6,7},new int[]{17,7},new int[]{4,8},new int[]{5,8},new int[]{11,8},
+        //     new int[]{12,8},new int[]{13,8},new int[]{14,8},new int[]{15,8},new int[]{16,8}
+        // }; 
         //▄symbol
         //a 2 dimensional field
         for (int y = 0; y < Height; y++)

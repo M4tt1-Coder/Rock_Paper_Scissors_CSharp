@@ -55,13 +55,10 @@ if (userNewGameChoice == 0)
 }
 else if (userNewGameChoice == 1)
 {
-    Console.WriteLine("I see let's meet play later again!");
+    Console.WriteLine("I see let's play later again!");
     Environment.Exit(0);
 }
 Console.WriteLine("__________");
 
-//TODO - move versus layout coordinates to textfiles
-//TODO - rework the layout 
-//-> creat rock, paper, scissors, vs layouts
 //TODO - add readme
 //TODO - add github workflow with action -> make plan what to do in order
