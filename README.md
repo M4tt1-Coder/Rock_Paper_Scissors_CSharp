@@ -17,10 +17,10 @@ I came up with an idea of displaying the Rock Paper Scissors images, that was qu
 Here is the guide to install and play the Rock Paper Scissors game
 For the app you need this requirements:
 
-    - ... you need to install .NET (at least version 4.7 or higher) 
-    - ... a processor with minimum 1 GHz
-    - ... RAM minimum 512 MB 
-    - ... Disk space minimum 4,5 GB
+- ... you need to install .NET (at least version 4.7 or higher) 
+- ... a processor with minimum 1 GHz
+- ... RAM minimum 512 MB 
+- ... Disk space minimum 4,5 GB
 
 To download .NET click [here](https://dotnet.microsoft.com/en-us/download)!
 
@@ -55,3 +55,27 @@ Depending on where you want to run it you could ...
     dotnet run --project path/to/Rock_Paper_Scissors_CSharp.sln
 ```
 
+### So what can you expect?
+Now after you should be able to start the program there should appear a screen like this:
+<br>
+<img src="Rock_Paper_Scissors_CSharp/storage/startScreen.png" alt="image" width="40%" height="auto">
+
+For more impressions keep playing!:wink:
+
+## Finally, how do I use it?
+
+It's not that difficult, you just need to know the **"Rock-Paper-Scissors"** rules.
+For instructions you can go [here](https://www.wikihow.com/Play-Rock,-Paper,-Scissors)!
+
+You will need to answer with simple inputs of numbers or short words. Of course you can find other control opportunities!
+
+Actually there's not much to say about 'how the game works' ... so just start it and discover it for yourself!
+
+## Credits 
+
+I worked alone on the project so I can't really give specific credits to somebody.
+
+My personal socials:
+- [LinkedIn]()
+- [Fiverr]()
+- [Instagram]()
