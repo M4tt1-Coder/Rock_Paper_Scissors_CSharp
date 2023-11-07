@@ -25,7 +25,7 @@ For the app you need this requirements:
 To download .NET click [here](https://dotnet.microsoft.com/en-us/download)!
 
 ### Clone Repository 
-Before you start,s install [git](https://git-scm.com/downloads) if you haven't already!
+Before you start, install [git](https://git-scm.com/downloads) if you haven't already!
 
 
 Head to the directory, where you want to place the repository, and open a terminal in that folder.
