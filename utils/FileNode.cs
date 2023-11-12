@@ -40,7 +40,7 @@ public static class FileNode
             {
                 return File.ReadAllLines(path()).ToList();
             }
-            catch(IOException e)
+            catch
             {
                 Thread.Sleep(500);                
             }

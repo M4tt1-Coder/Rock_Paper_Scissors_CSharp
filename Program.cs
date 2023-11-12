@@ -59,5 +59,3 @@ else if (userNewGameChoice == 1)
     Environment.Exit(0);
 }
 Console.WriteLine("__________");
-
-//TODO - github workflow with action -> make plan what to do in order
