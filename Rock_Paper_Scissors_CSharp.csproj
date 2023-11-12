@@ -13,6 +13,11 @@
     </ItemGroup>
 
 
+    <ItemGroup>
+      <Content Include=".github\workflows\dotnet.yml" />
+    </ItemGroup>
+
+
 
 
 

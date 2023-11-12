@@ -60,5 +60,4 @@ else if (userNewGameChoice == 1)
 }
 Console.WriteLine("__________");
 
-//TODO - add readme
 //TODO - add github workflow with action -> make plan what to do in order
