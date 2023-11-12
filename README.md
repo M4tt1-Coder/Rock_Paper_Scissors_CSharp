@@ -58,7 +58,7 @@ Depending on where you want to run it you could ...
 ### So what can you expect?
 Now after you should be able to start the program there should appear a screen like this:
 <br>
-<img src="Rock_Paper_Scissors_CSharp/storage/startScreen.png" alt="image" width="50%" height="auto">
+<img src="storage/startScreen.png" alt="image" width="50%" height="auto">
 
 For more impressions keep playing!:wink:
 
