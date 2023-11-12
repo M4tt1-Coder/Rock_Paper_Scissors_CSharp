@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp.csproj": {}
+    "/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp.csproj": {}
   },
   "projects": {
-    "/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp.csproj": {
+    "/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp.csproj",
+        "projectUniqueName": "/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp.csproj",
         "projectName": "Rock_Paper_Scissors_CSharp",
-        "projectPath": "/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp.csproj",
+        "projectPath": "/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp.csproj",
         "packagesPath": "/Users/m4tt1/.nuget/packages/",
-        "outputPath": "/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/Rock_Paper_Scissors_CSharp/obj/",
+        "outputPath": "/Users/m4tt1/RiderProjects/Rock_Paper_Scissors_CSharp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/m4tt1/.nuget/NuGet/NuGet.Config"
