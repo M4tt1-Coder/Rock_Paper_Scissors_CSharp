@@ -14,7 +14,7 @@ I didn't use any further technologies.
 I came up with an idea of displaying the Rock Paper Scissors images, that was quite challenging because I had think of an own coordinate system to show the symbols, check out the game for more insight!
 
 ## Installation 
-Here is the guide to install and play the Rock Paper Scissors game
+Here is the guide to install and play the Rock Paper Scissors game.
 For the app you need this requirements:
 
 - ... you need to install .NET (at least version 4.7 or higher) 
